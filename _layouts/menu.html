@@ -3,18 +3,18 @@
 <head>
 	<title>{{page.title}}</title>
 	{% for css in page.css %}
-	<link rel="stylesheet" href="{{css}}">
+	<link rel="stylesheet" href="{{site.url}}{{css}}">
 	{% endfor %}
 </head>
 
 <body>
 
 	<div class="container">
-
+		{{content}}
 	</div>
 
 	{% for js in page.js %}
-	<script src="{{js}}"></script>
+	<script src="{{site.url}}{{js}}"></script>
 	{% endfor %}
 </body>
 
