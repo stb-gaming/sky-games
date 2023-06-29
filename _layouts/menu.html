@@ -1,0 +1,16 @@
+<html>
+
+<head>
+	<title>{{page.title}}</title>
+	{% for css in page.css %}
+	<link rel="stylesheet" href="{{css}}">
+	{% endfor %}
+</head>
+
+<body>
+	{% for js in page.js %}
+	<script src="{{js}}"></script>
+	{% endfor %}
+</body>
+
+</html>

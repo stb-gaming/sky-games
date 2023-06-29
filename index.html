@@ -1,0 +1,9 @@
+---
+title: Home
+---
+<h1>Choose a menu</h1>
+<ul>
+	{% for menu in site.menus %}
+	<li><a href="{{menu.url}}">{{menu.title}}</a></li>
+	{% endfor %}
+</ul>

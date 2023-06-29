@@ -1,0 +1,18 @@
+collections:
+  menus:
+    output: true
+
+
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - yarn.lock
+  - LICENSE
+  - plan.md
+  - README.md
+  - gulpfile.js
+  - gemfiles
+  - src
+  - package.json
+  - package-lock.json
