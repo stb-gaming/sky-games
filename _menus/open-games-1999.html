@@ -1,3 +1,24 @@
 ---
 title: Open Games 1999
+tag: open-games-1999
+css:
+- open.css
+js:
+- open.js
 ---
+<h1 class="header">Games</h1>
+<div class="games-list">
+	{% for game in site.data.games | limit: 8 %}
+	<a class="game-item" href="{{game.url}}">
+		<img src="{{game.image | default: " https://picsum.photos/200" }}" alt="">
+		<span class="game-title">{{game.title}}</span>
+	</a>
+	{% endfor %}
+</div>
+<div class="open-bar">
+	<h1>Open....</h1>
+	<a href="javascript:pressRed()" class="red">Go to</a>
+	<a href="javascript:pressGreen()" class="green"></a>
+	<a href="javascript:pressYellow()" class="yellow"></a>
+	<a href="javascript:pressBlue()" class="blue"></a>
+</div>

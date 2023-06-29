@@ -2,20 +2,23 @@
 
 <head>
 	<title>{{page.title}}</title>
+	<link rel="stylesheet" href="{{site.url}}/assets/css/style.css">
+	<link rel="stylesheet" href="{{site.url}}/assets/css/base.css">
 	{% for css in page.css %}
-	<link rel="stylesheet" href="{{site.url}}{{css}}">
+	<link rel="stylesheet" href="{{site.url}}/assets/css/{{css}}">
 	{% endfor %}
 </head>
 
-<body>
+<body class="{{page.tag}}">
 
 	<div class="container">
 		{{content}}
 	</div>
-
+	<script src="{{site.url}}/assets/js/base.js"></script>
 	{% for js in page.js %}
-	<script src="{{site.url}}{{js}}"></script>
+	<script src="{{site.url}}/assets/js/{{js}}"></script>
 	{% endfor %}
+	<script src="{{site.url}}/assets/js/controls.js"></script>
 </body>
 
 </html>

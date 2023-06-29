@@ -1,9 +1,21 @@
 url: https://tumble1999.github.io/sky-games
 
+permalink: pretty
+
 collections:
   menus:
     output: true
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: menus
+    values:
+      layout: menu
 
 exclude:
   - node_modules
