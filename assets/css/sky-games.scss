@@ -57,12 +57,18 @@ main {
 	flex-basis: 475px;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1em;
 	position: relative;
+	gap: 1em;
 
 	img {
 		width: 150px;
 		border-radius: 1em;
+	}
+
+	.game {
+		&:focus,
+		&:hover {
+		}
 	}
 }
 .game-info {
@@ -96,6 +102,7 @@ footer {
 		display: flex;
 		align-items: center;
 		&::before {
+			border-style: inset;
 			border-radius: 25%;
 			width: 2em;
 			height: 2em;
