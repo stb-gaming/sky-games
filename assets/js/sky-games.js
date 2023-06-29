@@ -23,6 +23,17 @@ function lastPage() {
 	}
 }
 
+
+
+function pressYellow() {
+	if (song.paused) {
+		song.play();
+	} else {
+		song.pause();
+	}
+}
+
+
 function pressBlue() {
 	window.location = "/";
 }
