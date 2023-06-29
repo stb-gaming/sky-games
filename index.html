@@ -1,9 +1,8 @@
 ---
 title: Home
 ---
-<h1>Choose a menu</h1>
-<ul>
+<div class="item-list">
 	{% for menu in site.menus %}
-	<li><a href="{{site.url}}{{menu.url}}">{{menu.title}}</a></li>
+	<a href="{{site.url}}{{menu.url}}">{{menu.title}}</a>
 	{% endfor %}
-</ul>
+</div>

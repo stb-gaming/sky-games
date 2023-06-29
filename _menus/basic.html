@@ -1,0 +1,12 @@
+---
+title: Basic Menu
+layout: default
+---
+
+<div class="item-list">
+	{% for game in site.data.games %}
+	<a href="{{site.url}}{{game.url}}">
+		<img src="{{site.url}}/assets/img/games/{{game.image}}" alt="" height="33">
+		{{game.title}}</a>
+	{% endfor %}
+</div>
