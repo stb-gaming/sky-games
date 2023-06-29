@@ -1,0 +1,39 @@
+---
+title: Sky Games 2007
+tag: sky-games-2007
+css:
+- sky-games.css
+js:
+- sky-games.js
+---
+<header>
+	<img src="/assets/img/games/SKY Games/SkyGamesLogo-3D Ball-RGB.jpg" alt="">
+	<div class="tabs">
+		<a href="#">Tab 1 </a>
+		<a href="#">Tab 2</a>
+		<a href="#">Tab 3</a>
+	</div>
+</header>
+<main>{% assign pages = site.data.games.size | divided_by: 9 | ceil %}
+	{% for mult in (0..pages) %}
+	{% assign off = mult | times: 9 %}
+
+	<div class="games-list">
+		{% for game in site.data.games | limit: 9 | offset: off %}
+		<a href="{{game.url}}"><img src="{{site.url}}/assets/img/games/{{game.image}}" alt="{{game.title}}"></a>
+		{% endfor %}<a class="triangle left" href="javascript:lastPage()"></a>
+		<a class="triangle right" href="javascript:nextPage()"></a>
+	</div>
+	{% endfor %}
+	<div class="game-info">
+		<h1>Game Name</h1>
+		<img src="#" alt="Game Name">
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed atque iste et sapiente libero, aut ratione sit,
+			praesentium sint temporibus, eos laboriosam odio mollitia repellat modi beatae. Dolorum, illo iusto.</p>
+	</div>
+</main>
+<footer>
+	<a href="javascript:pressRed()" class="red">No Prizes here</a>
+	<a href="javascript:pressGreen()" class="green">No Games</a>
+	<a href="javascript:pressYellow()" class="yellow">Infinite Game Pass</a>
+</footer>

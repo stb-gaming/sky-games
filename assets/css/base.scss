@@ -28,8 +28,6 @@ a:hover {
 .blue {
 	&::before {
 		content: "";
-		width: 1em;
-		height: 1em;
 		display: block;
 	}
 }
