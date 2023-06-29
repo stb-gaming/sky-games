@@ -66,8 +66,17 @@ main {
 	}
 
 	.game {
+		img {
+			border: 1em solid transparent;
+		}
 		&:focus,
-		&:hover {
+		&:hover,
+		&:focus-visible {
+			border: none;
+			outline: none;
+			img {
+				border-color: #f42f64;
+			}
 		}
 	}
 }
