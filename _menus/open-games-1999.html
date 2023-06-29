@@ -8,9 +8,9 @@ js:
 ---
 <h1 class="header">Games</h1>
 <div class="games-list">
-	{% for game in site.data.games | limit: 8 %}
+	{% for game in site.data.games | limit:8 %}
 	<a class="game-item" href="{{game.url}}">
-		<img src="{{game.image | default: " https://picsum.photos/200" }}" alt="">
+		<img src="{{site.url}}/assets/img/games/{{game.image}}" alt="">
 		<span class="game-title">{{game.title}}</span>
 	</a>
 	{% endfor %}
