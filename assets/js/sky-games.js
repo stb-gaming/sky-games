@@ -23,6 +23,8 @@ function lastPage() {
 	}
 }
 
-
+function pressBlue() {
+	window.location = "/";
+}
 
 openPage(0);
