@@ -50,11 +50,11 @@
 
 - title: "Denki Blocks!"
   url: "https://denki.co.uk/sky/db/app.html"
-  image: "Denki/Denki Blocks/Splash.jpg"
+  image: "Denki/Denki Blocks!/Denki Blocks!/DB! Sky Active 003.jpg"
 
 - title: "Dexter's Laboratory: Dexter vs. Mandark"
   url: "https://denki.co.uk/sky/dl/app.html"
-  image: "Cartoon Network/Dexter's Laboratory/Dexter vs. Mandark/Splash.jpg"
+  image: "Cartoon Network/Dexter's Laboratory/Dexter's Laboratory/DextersLabSplash.jpg"
 
 - title: "Duopolis"
   url: "https://denki.co.uk/sky/duo/app.html"
@@ -62,11 +62,11 @@
 
 - title: "Ed, Edd, n Eddy: Night of the Living Ed"
   url: "http://denki.co.uk/sky/eddy/app.html"
-  image: "Cartoon Network/Ed, Edd 'n' Eddy/Night of the Living Ed/Splash.jpg"
+  image: "Cartoon Network/Ed, Edd 'n' Eddy/Ed, Edd 'n' Eddy/Splash.jpg"
 
 - title: "Foster's Home for Imaginary Friends: Tick Tock Terror"
   url: "https://denki.co.uk/sky/fosters/app.html"
-  image: "Cartoon Network/Foster's Home For Imaginary Friends/Tick Tock Terror/Splash.jpg"
+  image: "Cartoon Network/Foster's Home For Imaginary Friends/Foster's Home For Imaginary Friends/Splash.jpg"
 
 - title: "Genie's Cave"
   url: "https://denki.co.uk/sky/gc/app.html"
@@ -91,7 +91,7 @@
 
 - title: "Lego Castle: The Sword of Virtue"
   url: "https://denki.co.uk/sky/lego/app.html"
-  image: null
+  image: "LEGO/LEGO Castle/DenkiSplash.bmp"
 
 - title: "Letter Box"
   url: "https://denki.co.uk/sky/lb/app.html"
@@ -99,7 +99,7 @@
 
 - title: "Looney Tunes: Back in Action"
   url: "https://denki.co.uk/sky/lt/app.html"
-  image: "Warner Bros/Looney Tunes Back in Action/Splash.jpg"
+  image: "Warner Bros/Looney Tunes/LooneyTunesSplash01.jpg"
 
 
 - title: "Number Crunch"
@@ -141,11 +141,11 @@
 
 - title: "Shrek: Double Trouble"
   url: "https://denki.co.uk/sky/shrek4/app.html"
-  image: "Dreamworks/Shrek/Shrek Episode 5/splash.jpg"
+  image: "Dreamworks/Shrek/Shrek Episode 4/Splash.jpg"
 
 - title: "Shrek: Imperial Peril"
   url: "https://denki.co.uk/sky/shrek5/app.html"
-  image: "null"
+  image: "Dreamworks/Shrek/Shrek Episode 5/splash.jpg"
 
 - title: "Shrek the Third"
   url: "https://denki.co.uk/sky/shrekthird/app.html"
@@ -158,7 +158,7 @@
 
 - title: "Star Trek: The Next Generation: STRANDED"
   url: "https://denki.co.uk/sky/st/app.html"
-  image: "Star Trek/Star Trek: The Next Generation: STRANDED/Splash.jpg"
+  image: "Paramount/Star Trek - The Next Generation/Splash.jpg"
 
 - title: "Super Breakout"
   url: "https://denki.co.uk/sky/breakout/app.html"
@@ -166,23 +166,23 @@
 
 - title: "Tetris"
   url: "http://denki.co.uk/sky/tetris/app.html"
-  image: "null"
+  image: "The Tetris Company/Tetris/Splash.jpg"
 
 - title: "The Grim Adventures of Billy and Mandy"
   url: "https://denki.co.uk/sky/grim/app.html"
-  image: "Cartoon Network/The Grim Adventures of Billy and Mandy/Splash.jpg"
+  image: "Cartoon Network/Grim Adventures of Billy & Mandy/Grim Adventures of Billy & Mandy/Splash.jpg"
 
 - title: "The Muppet Show: Backstage Rampage"
   url: "https://denki.co.uk/sky/muppets/app.html"
-  image: "The Muppet Show/The Muppet Show: Backstage Rampage/Splash.jpg"
+  image: "Disney/The Muppets/Splash.jpg"
 
 - title: "Thunderbirds: Flashpoint Earth"
   url: "https://denki.co.uk/sky/tbirds/app.html"
-  image: "Thunderbirds/Thunderbirds: Flashpoint Earth/Splash.jpg"
+  image: "Universal Studios/Thunderbirds/Splash.jpg"
 
 - title: "Tom and Jerry in Dynamice"
   url: "https://denki.co.uk/sky/dynamice/app.html"
-  image: "null"
+  image: "Cartoon Network/Tom and Jerry/Tom and Jerry Dynamice/DenkiSplash.bmp"
 
 
 - title: "Tom and Jerry: Mouse Party"
@@ -195,8 +195,8 @@
 
 - title: "Wallace and Gromit: The Curse of the Were-Rabbit"
   url: "https://denki.co.uk/sky/wg/app.html"
-  image: "Wallace and Gromit/Wallace and Gromit: The Curse of the Were-Rabbit/Splash.jpg"
+  image: "Aardman/Wallace & Gromit - The Curse of the Were-Rabbit/splash.bmp"
 
 - title: "Word Crunch Deluxe"
   url: "https://denki.co.uk/sky/wcd/app.html"
-  image: "null"
+  image: "SKY Games/Word Crunch/Word Crunch Deluxe/Splash.jpg"
