@@ -7,5 +7,5 @@ function pressRed() {
 
 
 function pressBlue() {
-	window.location = "/";
+	window.location = "/sky-games";
 }

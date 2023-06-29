@@ -35,7 +35,7 @@ function pressYellow() {
 
 
 function pressBlue() {
-	window.location = "/";
+	window.location = "/sky-games";
 }
 
 openPage(0);
