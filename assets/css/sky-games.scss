@@ -57,8 +57,13 @@ main {
 	position: relative;
 	gap: 33.6px;
 
+	display: grid;
+	grid-template-columns: 130px 130px 130px;
+	grid-template-rows: 104px 104px 104px;
+
 	img {
 		width: 130px;
+		height: 104px;
 		border-radius: 1em;
 	}
 
@@ -236,4 +241,7 @@ footer {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+
+.tabs {
 }

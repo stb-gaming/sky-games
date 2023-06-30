@@ -107,7 +107,7 @@ function updateGameInfo() {
 	console.log(currentGame);
 	let image = new Image();
 	gameInfo.getElementsByTagName("h1")[0].innerText = image.alt = currentGame.dataset.title;
-	image.src = image_prefix + (currentGame.dataset.screenshot || currentGame.dataset.image);
+	image.src = image_prefix + (currentGame.dataset.gameplay || currentGame.dataset.image || currentGame.dataset.splash);
 	if (currentGame.dataset.new)
 		gameInfo.classList.add("new");
 	else
@@ -182,7 +182,7 @@ Array.from(document.getElementsByClassName("game")).forEach(g => {
 
 		let splash = new Image();
 		splash.classList.add("splash");
-		splash.src = image_prefix + g.dataset.image;
+		splash.src = image_prefix + (g.dataset.splash || g.dataset.image);
 		splashContainer.appendChild(splash);
 		setTimeout(() => {
 			window.location.href = g.dataset.url;
