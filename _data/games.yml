@@ -5,12 +5,9 @@
   completable: true
   brand: Nickelodeon
   splash: /Nickelodeon/Rugrats - All Grown Up!/Splash.jpg"
-  gameplay: "Nickelodeon/Rugrats - All Grown Up!/Play04.png"
+  gameplay: "Nickelodeon/Rugrats - All Grown Up!/Play04.jpg"
   description: >
-    The immensely popular Yu-Gotta-Go card game championships are being held in the Rugrats school and Chuckie is dead cert to win! That is, if Vice Principal Pangborn hadn’t confiscated Chuckie’s Yu-Gotta-Go cards and hidden them throughout the school for safekeeping.
-    Help Tommy find and collect the cards, trading for Dil’s zany inventions to aid you in your task. Use Pepe the Chef’s strange culinary concoctions to splat teachers, janitors or anyone who stands in your way!
-    Explore the school and find rare Yu-Gotta-Go cards for bonus points. Run, Jump, Throw, Splat, Hide and Sneak your way around the School Classrooms, Hallways and Schoolyard to find all of Chuckie’s confiscated and hidden cards.
-    Only by hiding, jumping out of reach and using carefully placed items to avoiding capture can Tommy explore the school Classrooms, Hallways, Basement and Schoolyard to find and collect all of Chuckie’s confiscated cards!"
+    Help the Rugrats collect Chuckie's confiscated Yu-Gotta-Go cards!
 
 - title: "Ben 10: Vilgax Venom"
   url: "https://denki.co.uk/sky/ben10/app.html"
@@ -53,6 +50,7 @@
   url: "https://denki.co.uk/sky/darts/app.html"
   author: "Denki"
   brand: "Sky Sports"
+  image: "SKY Sports/Darts/darts-icon.jpg"
   menu: "SKY Sports/Darts/ModeSelect.jpg"
   gameplay: "SKY Sports/Darts/Play02.jpg"
 
@@ -199,16 +197,17 @@
 - title: "Tom and Jerry in Dynamice"
   url: "https://denki.co.uk/sky/dynamice/app.html"
   splash: "Cartoon Network/Tom and Jerry/Tom and Jerry Dynamice/DenkiSplash.bmp"
+  gameplay: "Cartoon Network/Tom and Jerry/Tom and Jerry Dynamice/Dynamice03.png"
 
 
 - title: "Tom and Jerry: Mouse Party"
   url: "http://denki.co.uk/sky/tj/app.html"
-  splash: "Tom and Jerry/Tom and Jerry: Mouse Party/Splash.jpg"
 
-- title: "Wall.E"
+- title: "Wall-E"
   url: "https://denki.co.uk/sky/walle/app.html"
-  splash: "Pixar/Wall.E/Splash.jpg"
   new: true
+  menu: "Disney/WALL.E/menu.png"
+  gameplay: "Disney/WALL.E/gameplay.png"
 
 - title: "Wallace and Gromit: The Curse of the Were-Rabbit"
   url: "https://denki.co.uk/sky/wg/app.html"

@@ -28,6 +28,10 @@ function lastPage() {
 	}
 }
 
+document.geteve;
+document.addEventListener("contextmenu", e => {
+	e.def;
+});
 
 
 let focusX = focusY = focusXlast = focusYlast = 0;
@@ -104,7 +108,6 @@ function focus() {
 
 function updateGameInfo() {
 	let gameInfo = document.getElementById("game-info");
-	console.log(currentGame);
 	let image = new Image();
 	gameInfo.getElementsByTagName("h1")[0].innerText = image.alt = currentGame.dataset.title;
 	image.src = image_prefix + (currentGame.dataset.gameplay || currentGame.dataset.image || currentGame.dataset.splash);
@@ -166,6 +169,9 @@ function pressDown() {
 openPage(0);
 focus();
 
+
+
+
 Array.from(document.getElementsByClassName("game")).forEach(g => {
 	g.addEventListener("mouseenter", () => {
 		currentGame = g;
@@ -175,15 +181,7 @@ Array.from(document.getElementsByClassName("game")).forEach(g => {
 	g.addEventListener("click", e => {
 		e.preventDefault();
 
-		let splashContainer = document.createElement("div");
-		splashContainer.classList.add("splash-container");
-		document.body.appendChild(splashContainer);
-
-
-		let splash = new Image();
-		splash.classList.add("splash");
-		splash.src = image_prefix + (g.dataset.splash || g.dataset.image);
-		splashContainer.appendChild(splash);
+		splash(image_prefix + (g.dataset.splash || g.dataset.image));
 		setTimeout(() => {
 			window.location.href = g.dataset.url;
 		}, 5000);

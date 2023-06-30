@@ -29,6 +29,7 @@ main {
 	grid-template-columns: 60% 40%;
 	padding: 1em;
 
+	//Arrow
 	.triangle {
 		display: inline-block;
 		width: 0;
@@ -40,13 +41,13 @@ main {
 		&.right {
 			border-width: 2em 0 2em 1.5em;
 			border-color: transparent transparent transparent #f42f64;
-			right: -2em;
+			right: -1em;
 		}
 
 		&.left {
 			border-width: 2em 1.5em 2em 0;
 			border-color: transparent #f42f64 transparent transparent;
-			left: -2em;
+			left: -1em;
 		}
 	}
 }
@@ -153,6 +154,7 @@ main {
 	display: flex;
 	align-items: center;
 	flex-flow: column;
+	margin-left: 1.5em;
 	&.new .screenshot {
 		position: relative;
 		&::before {
@@ -244,4 +246,5 @@ footer {
 }
 
 .tabs {
+	background-color: #f42f64;
 }

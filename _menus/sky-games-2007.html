@@ -6,6 +6,25 @@ css:
 js:
 - sky-games.js
 ---
+<script>
+	function splash(img) {
+		let splashContainer = document.createElement("div");
+		splashContainer.classList.add("splash-container");
+		document.body.appendChild(splashContainer);
+
+
+		let splash = new Image();
+		splash.classList.add("splash");
+		splash.src = img;
+		splashContainer.appendChild(splash);
+		return splashContainer;
+	}
+	let con = splash("{{site.url}}/assets/img/2007/splash.webp");
+	window.addEventListener("load", () => {
+		con.remove();
+	})
+</script>
+
 <header>
 	<img src="{{site.url}}/assets/img/games/SKY Games/SkyGamesLogo-3D Ball-RGB.jpg" alt="">
 	<div class="tabs">
