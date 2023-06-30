@@ -176,7 +176,7 @@ Array.from(document.getElementsByClassName("game")).forEach(g => {
 		splash.src = image_prefix + g.dataset.image;
 		splashContainer.appendChild(splash);
 		setTimeout(() => {
-			//window.location.href = g.dataset.url;
+			window.location.href = g.dataset.url;
 		}, 5000);
 	});
 });
