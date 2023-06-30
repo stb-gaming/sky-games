@@ -1,6 +1,7 @@
 let page = 0;
 let pages = Array.from(document.getElementsByClassName("games-list"));
 let currentGame;
+let musicplayed = false;
 
 
 function openPage() {
@@ -13,12 +14,14 @@ function closeAll() {
 }
 
 function nextPage() {
+	if (!musicplayed) toggleMusic();
 	if (page != pages.length - 1) {
 		page++;
 		openPage();
 	}
 }
 function lastPage() {
+	if (!musicplayed) toggleMusic();
 	if (page != 0) {
 		page--;
 		openPage();
@@ -118,13 +121,19 @@ function pressRed() {
 	controls.style.display = controls.style.display ? null : "none";
 }
 
-
-function pressYellow() {
+function toggleMusic() {
 	if (song.paused) {
+		musicplayed = true;
 		song.play();
 	} else {
 		song.pause();
 	}
+
+}
+
+
+function pressYellow() {
+	toggleMusic();
 }
 
 
@@ -179,4 +188,9 @@ Array.from(document.getElementsByClassName("game")).forEach(g => {
 			window.location.href = g.dataset.url;
 		}, 5000);
 	});
+});
+
+
+document.addEventListener("keyup", event => {
+	if (!musicplayed) toggleMusic();
 });
