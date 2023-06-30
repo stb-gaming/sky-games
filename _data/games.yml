@@ -14,6 +14,7 @@
 - title: "Ben 10: Vilgax Venom"
   url: "https://denki.co.uk/sky/ben10/app.html"
   image: "Cartoon Network/Ben10/Ben 10 Episode 1 Vilgax Venom/Splash.jpg"
+  new: true
 
 - title: "Boggle"
   url: "https://denki.co.uk/sky/boggle/app.html"
@@ -92,6 +93,7 @@
 - title: "Lego Castle: The Sword of Virtue"
   url: "https://denki.co.uk/sky/lego/app.html"
   image: "LEGO/LEGO Castle/DenkiSplash.bmp"
+  new: true
 
 - title: "Letter Box"
   url: "https://denki.co.uk/sky/lb/app.html"
@@ -192,6 +194,7 @@
 - title: "Wall.E"
   url: "https://denki.co.uk/sky/walle/app.html"
   image: "Pixar/Wall.E/Splash.jpg"
+  new: true
 
 - title: "Wallace and Gromit: The Curse of the Were-Rabbit"
   url: "https://denki.co.uk/sky/wg/app.html"
