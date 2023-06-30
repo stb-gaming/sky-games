@@ -214,3 +214,23 @@ footer {
 		}
 	}
 }
+
+.splash-container {
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	// justify-content: center;
+}
+
+.splash {
+	//flex: 1;
+	height: auto;
+	width: 100%;
+}

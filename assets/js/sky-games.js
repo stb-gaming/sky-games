@@ -162,4 +162,21 @@ Array.from(document.getElementsByClassName("game")).forEach(g => {
 		currentGame = g;
 		updateGameInfo();
 	});
+
+	g.addEventListener("click", e => {
+		e.preventDefault();
+
+		let splashContainer = document.createElement("div");
+		splashContainer.classList.add("splash-container");
+		document.body.appendChild(splashContainer);
+
+
+		let splash = new Image();
+		splash.classList.add("splash");
+		splash.src = image_prefix + g.dataset.image;
+		splashContainer.appendChild(splash);
+		setTimeout(() => {
+			//window.location.href = g.dataset.url;
+		}, 5000);
+	});
 });
