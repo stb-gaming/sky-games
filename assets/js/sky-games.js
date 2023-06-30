@@ -58,7 +58,10 @@ function focus() {
 	if (game.classList.contains("game")) pages[page].children[focusI].focus();
 }
 
-
+function pressRed() {
+	let controls = document.getElementById("controls");
+	controls.style.display = controls.style.display ? null : "none";
+}
 
 
 function pressYellow() {

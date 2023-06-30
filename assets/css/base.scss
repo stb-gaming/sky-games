@@ -44,3 +44,8 @@ a:hover {
 .blue::before {
 	background-color: blue;
 }
+
+#controls {
+	display: flex;
+	justify-content: space-around;
+}

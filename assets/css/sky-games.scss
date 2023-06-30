@@ -66,16 +66,42 @@ main {
 	}
 
 	.game {
-		img {
-			border: 1em solid transparent;
-		}
+		display: flex;
+		justify-content: space-around;
+
 		&:focus,
 		&:hover,
-		&:focus-visible {
-			border: none;
+		&:focus-visible,
+		&.debug {
 			outline: none;
-			img {
+			position: relative;
+
+			&::before {
+				content: "";
+				border-radius: 1em;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border: 0.5em solid transparent;
 				border-color: #f42f64;
+			}
+
+			&::after {
+				content: "SELECT";
+				padding: 0 10px;
+				font-size: 13px;
+				color: white;
+				font-weight: bold;
+				background-color: #f42f64;
+				background-image: linear-gradient(0deg, rgba(211, 52, 92, 1) 20%, transparent 35%);
+				border-radius: 0.5rem;
+
+				position: absolute;
+				top: 0;
+
+				outline: white solid;
 			}
 		}
 	}

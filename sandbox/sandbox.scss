@@ -1,0 +1,21 @@
+---
+---
+
+.box {
+	width: 100px;
+	height: 100px;
+	display: block;
+	background-color: green;
+
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 1em;
+	border-width: 1em;
+}
+
+.select-box {
+	border-radius: 1em;
+	border: 0.5em magenta solid;
+	width: 150px;
+	height: 150px;
+}
