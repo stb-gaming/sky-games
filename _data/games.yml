@@ -46,6 +46,18 @@
   image: Namco/Pac-Man/Splash.jpg
   menu:
 
+- title: Beehive Bedlam
+  description: Summer/Winter is on its way. Help the bees store flowers to make their honey.
+  author:
+  url: https://beehive-bedlam.com/
+  brand:
+  splash: SKY Games/Beehive Bedlam/Beehive_Bedlam_launch_2001.png
+  gameplay: SKY Games/Beehive Bedlam/gameplay.png
+  new:
+  date: 1999-1-1
+  image:
+  menu: SKY Games/Beehive Bedlam/menu.png
+
 - title: Caterpillar Crunch
   description:
   author: Denki
