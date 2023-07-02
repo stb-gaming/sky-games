@@ -5,6 +5,12 @@ let menu = createMenu({
 	pages, rows: 3, columns: 3
 });
 
+Array.from(document.querySelectorAll(".menu-item")).forEach(item => {
+	item.addEventListener("mouseenter", () => {
+		menu.goto(item);
+	});
+});
+
 
 function pressDown() {
 	menu.down();

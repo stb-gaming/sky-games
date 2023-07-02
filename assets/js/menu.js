@@ -28,24 +28,30 @@ function createMenu({
 		if (y < 0) {
 			dy -= y - 0;
 			y = 0;
+			console.log("end of column");
 		}
 		if (y >= rows) {
 			dy -= y - rows - 1;
 			y = rows - 1;
+			console.log("end of column");
 		}
 
 
 		// if theres no more pages go back one
 		if (p >= pages.length || p < 0) {
 			p -= dp;
-			x -= dp * columns;
+			x -= dx;
 			dp = 0;
+			console.log("no more pages");
 		}
 
 
 		// Update Page Focus
-		pages[p - dp].style.display = "none"; //hide last page
-		pages[p].style.display = null; // Show new page
+		if (dp) {
+			pages[p - dp].style.display = "none"; //hide last page
+			pages[p].style.display = null; // Show new page
+			console.log("change of page");
+		}
 
 
 		let item = getSelected();
@@ -64,7 +70,7 @@ function createMenu({
 
 		//Update Item Focus
 		item.focus({ focusVisible: true });
-		console.log("focus:", { p, x, y });
+		onFocus(item);
 
 		dp = dx = dy = 0;
 	}
@@ -100,6 +106,21 @@ function createMenu({
 		updateFocus();
 	}
 
+	function goto(item) {
+		let page = pages.indexOf(item.parentElement),
+			items = getItems(page),
+			i = items.indexOf(item),
+			py = Math.floor(i / columns),
+			px = i - py * columns,
+			gx = page * columns + px;
+
+
+		dy = py - y;
+		dx = gx - x;;
+		px = page - p;
+		updateFocus();
+	}
+
 	function getItems(p) {
 		return Array.from(pages[p].querySelectorAll(itemSelector));
 	}
@@ -118,6 +139,6 @@ function createMenu({
 	init();
 
 	return {
-		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem
+		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto
 	};
 }
