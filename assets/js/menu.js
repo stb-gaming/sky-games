@@ -60,7 +60,7 @@ function createMenu({
 		// movement animation
 		setTimeout(() => {
 			item.classList.remove("left", "right", "up", "down");
-		});
+		}, 0);
 
 		//Update Item Focus
 		item.focus({ focusVisible: true });
