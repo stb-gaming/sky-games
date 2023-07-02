@@ -43,8 +43,8 @@ function focus() {
 		} else {
 			nextPage();
 			focusX = focusXlast = 0;
-			if (pages[page].children.length - 2 < focusY * 3) {
-				focusY = focusYlast = Math.ceil((pages[page].children.length - 2) / 3) - 1;
+			if (pages[page].children.length - 3 < focusY * 3) {
+				focusY = focusYlast = Math.floor(pages[page].children.length / 3 - 1);
 			}
 		}
 	}
