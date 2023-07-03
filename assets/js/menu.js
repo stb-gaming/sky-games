@@ -21,8 +21,32 @@ function createMenu({
 	function updateFocus() {
 		x += dx + dp * columns;
 		y += dy;
+
+
+
+
+		let items = getItems(p);
 		dp += Math.floor(x / columns) - p;
 		p += dp;
+
+		if (y * columns >= items.length - 1) {
+			let localX = x - p * columns;
+			let maxX = (items.length - 1) % columns;
+			if (maxX < localX) {
+				if (dy) {
+					y -= dy;
+					dy = 0;
+				} else {
+					let toNextPage = columns - localX + 1;
+					//console.log({ localX, maxX, toNextPage });
+					//console.log(toNextPage);
+					dx += toNextPage - 1;
+					x += toNextPage - 1;
+					dp += 1;
+					p += 1;
+				}
+			}
+		}
 
 
 
@@ -31,7 +55,7 @@ function createMenu({
 			p -= dp;
 			x -= dx;
 			dp = 0;
-			console.log("no more pages");
+			//console.log("no more pages");
 		}
 
 
@@ -39,7 +63,7 @@ function createMenu({
 		if (dp) {
 			pages[p - dp].style.display = "none"; //hide last page
 			pages[p].style.display = null; // Show new page
-			console.log("change of page");
+			//console.log("change of page");
 		}
 
 
@@ -48,15 +72,15 @@ function createMenu({
 			let newY = 0;
 			dy -= y - newY;
 			y = newY;
-			console.log("end of column");
+			//console.log("end of column");
 		}
 
-		let items = getItems(p);
+		items = getItems(p);
 		if (y * columns >= items.length - 1) {
-			let newY = items.length / columns - 1;
+			let newY = Math.ceil(items.length / columns - 1);
 			dy -= y - newY;
 			y = newY;
-			console.log("end of column");
+			//console.log("end of column");
 		}
 
 
@@ -139,6 +163,7 @@ function createMenu({
 	}
 
 	function getSelected() {
+		//console.log({ p, x, y });
 		return getItem(p, x, y);
 	}
 
