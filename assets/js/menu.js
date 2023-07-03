@@ -102,7 +102,9 @@ function createMenu({
 			dp = 0;
 		}
 
-		if (!dp && animations) {
+
+
+		if (!dp && animations && Math.sqrt(dx * dx + dy * dy) == 1) {
 			//Update Animations
 			if (dy > 0) item.classList.add("down");
 			if (dy < 0) item.classList.add("up");
