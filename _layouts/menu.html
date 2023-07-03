@@ -11,6 +11,9 @@
 </head>
 
 <body class="{{page.tag}}">
+	<script>
+		const SKY_GAMES = JSON.parse(`{{site.data.games | jsonify }}`)
+	</script>
 
 	<div class="container">
 		{{content}}

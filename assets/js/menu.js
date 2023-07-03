@@ -24,9 +24,8 @@ function createMenu({
 		x += dx;
 		y += dy;
 
-		console.log({ dp, x });
+		//console.log({ dp, x });
 		if (x < 0 || x > columns * pages.length - 1) {
-			console.log("beep");
 			x -= dx;
 			dx = 0;
 			//console.log("end of row");
@@ -34,7 +33,7 @@ function createMenu({
 
 		dp = Math.floor(x / columns) - p;
 		p += dp;
-		console.log({ dp, x });
+		//console.log({ dp, x });
 
 		if (p >= pages.length || p < 0) {
 			p -= dp;
@@ -189,6 +188,12 @@ function createMenu({
 		if (pages[p]) return Array.from(pages[p].querySelectorAll(itemSelector));
 	}
 
+	function getPages() {
+		return pages;
+	}
+	function setPages(newPages) {
+		pages = newPages;
+	}
 	function getItem(p, x, y) {
 		let localX = x - p * columns,
 			i = y * columns + localX;
@@ -202,6 +207,6 @@ function createMenu({
 	}
 
 	return {
-		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init
+		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init, getPages, setPages
 	};
 }
