@@ -24,17 +24,6 @@ function createMenu({
 		dp += Math.floor(x / columns) - p;
 		p += dp;
 
-		// check of column has ended
-		if (y < 0) {
-			dy -= y - 0;
-			y = 0;
-			console.log("end of column");
-		}
-		if (y >= rows) {
-			dy -= y - rows - 1;
-			y = rows - 1;
-			console.log("end of column");
-		}
 
 
 		// if theres no more pages go back one
@@ -51,6 +40,23 @@ function createMenu({
 			pages[p - dp].style.display = "none"; //hide last page
 			pages[p].style.display = null; // Show new page
 			console.log("change of page");
+		}
+
+
+		// check of column has ended
+		if (y < 0) {
+			let newY = 0;
+			dy -= y - newY;
+			y = newY;
+			console.log("end of column");
+		}
+
+		let items = getItems(p);
+		if (y * columns >= items.length - 1) {
+			let newY = items.length / columns - 1;
+			dy -= y - newY;
+			y = newY;
+			console.log("end of column");
 		}
 
 
