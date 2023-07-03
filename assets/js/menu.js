@@ -3,7 +3,8 @@ function createMenu({
 	rows,
 	columns = 1,
 	onFocus = (item) => { },
-	itemSelector = "a"
+	itemSelector = "a",
+	animations = false
 }) {
 	let x = y = p = dx = dy = dp = 0;
 
@@ -22,12 +23,16 @@ function createMenu({
 		x += dx + dp * columns;
 		y += dy;
 
+		if (x < 0 || x > columns * pages.length - 1) {
+			x -= dx;
+			dx = 0;
+			//console.log("end of row");
+		}
 
-
+		dp = Math.floor(x / columns) - p;
+		p += dp;
 
 		let items = getItems(p);
-		dp += Math.floor(x / columns) - p;
-		p += dp;
 
 		if (y * columns >= items.length - 1) {
 			let localX = x - p * columns;
@@ -44,6 +49,7 @@ function createMenu({
 					x += toNextPage - 1;
 					dp += 1;
 					p += 1;
+					//console.log("to next page");
 				}
 			}
 		}
@@ -55,13 +61,14 @@ function createMenu({
 			p -= dp;
 			x -= dx;
 			dp = 0;
+			dx = 0;
 			//console.log("no more pages");
 		}
 
 
 		// Update Page Focus
 		if (dp) {
-			pages[p - dp].style.display = "none"; //hide last page
+			if (pages[p - dp]) pages[p - dp].style.display = "none"; //hide last page
 			pages[p].style.display = null; // Show new page
 			//console.log("change of page");
 		}
@@ -76,6 +83,7 @@ function createMenu({
 		}
 
 		items = getItems(p);
+
 		if (y * columns >= items.length - 1) {
 			let newY = Math.ceil(items.length / columns - 1);
 			dy -= y - newY;
@@ -85,18 +93,28 @@ function createMenu({
 
 
 		let item = getSelected();
+		if (!item) {
+			x -= dx;
+			y -= dy;
+			p -= dp;
+			dx = 0;
+			dy = 0;
+			dp = 0;
+		}
 
-		//Update Animations
-		if (dy > 0) item.classList.add("down");
-		if (dy < 0) item.classList.add("up");
-		if (dx > 0) item.classList.add("right");
-		if (dx < 0) item.classList.add("left");
-		// fixes a bug where when you mouse over something
-		// previously focussed with the keyboard it replays
-		// movement animation
-		setTimeout(() => {
-			item.classList.remove("left", "right", "up", "down");
-		}, 0);
+		if (!dp && animations) {
+			//Update Animations
+			if (dy > 0) item.classList.add("down");
+			if (dy < 0) item.classList.add("up");
+			if (dx > 0) item.classList.add("right");
+			if (dx < 0) item.classList.add("left");
+			// fixes a bug where when you mouse over something
+			// previously focussed with the keyboard it replays
+			// movement animation
+			setTimeout(() => {
+				item.classList.remove("left", "right", "up", "down");
+			}, 0);
+		}
 
 		//Update Item Focus
 		item.focus({ focusVisible: true });
@@ -152,14 +170,15 @@ function createMenu({
 	}
 
 	function getItems(p) {
-		return Array.from(pages[p].querySelectorAll(itemSelector));
+		//console.log({ p });
+		if (pages[p]) return Array.from(pages[p].querySelectorAll(itemSelector));
 	}
 
 	function getItem(p, x, y) {
 		let localX = x - p * columns,
 			i = y * columns + localX;
-
-		return getItems(p)[i];
+		let items = getItems(p);
+		if (items) return items[i];
 	}
 
 	function getSelected() {
@@ -167,9 +186,7 @@ function createMenu({
 		return getItem(p, x, y);
 	}
 
-	init();
-
 	return {
-		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto
+		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init
 	};
 }

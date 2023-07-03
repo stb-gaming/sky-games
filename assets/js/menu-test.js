@@ -4,6 +4,7 @@ let pages = Array.from(document.getElementsByClassName("test-menu"));
 let menu = createMenu({
 	pages, rows: 3, columns: 3
 });
+menu.init();
 
 Array.from(document.querySelectorAll(".menu-item")).forEach(item => {
 	item.addEventListener("mouseenter", () => {
