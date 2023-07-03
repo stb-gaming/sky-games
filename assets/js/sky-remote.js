@@ -48,6 +48,11 @@ let controls = [
 		title: "blue",
 		keys: ["r"],
 		function: "pressBlue"
+	},
+	{
+		title: "help",
+		keys: ["t"],
+		function: "presshelp"
 	}
 ];
 

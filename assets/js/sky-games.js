@@ -106,6 +106,8 @@ function toggleMusic() {
 
 }
 
+let xor = (foo, bar) => (foo && !bar) || (!foo && bar);
+
 function sortBy(attr) {
 	//close green menu
 	pressBack();
@@ -118,7 +120,15 @@ function sortBy(attr) {
 
 	menu = 2;
 	allList.textContent = "";
-	let games = SKY_GAMES.toSorted((a, b) => (typeof a[attr] == "boolean" ? b[attr] - a[attr] : a[attr] - b[attr])).forEach(game => {
+	let games = SKY_GAMES.toSorted((a, b) => {
+		let sorted = [a[attr], b[attr]].sort();
+		if (xor(sorted[0] == b[attr], typeof a[attr] == "boolean" || typeof b[attr] == "boolean")) {
+			return 1;
+		} else {
+			return -1;
+		}
+	});
+	games.forEach(game => {
 		let link = document.createElement("a");
 		link.classList.add("game");
 		link.href = game.url;
