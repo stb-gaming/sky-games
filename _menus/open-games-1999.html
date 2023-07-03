@@ -4,18 +4,25 @@ tag: open-games-1999
 css:
 - open.css
 js:
+- menu.js
 - open.js
+- sky-remote.js
 ---
 <h1 class="header">Games</h1>
+
+{% assign pages = site.data.games.size | divided_by: 8 | ceil %}
+{% for mult in (0..pages) %}
+{% assign off = mult | times: 8 %}
 <div class="games-list">
-	{% for game in site.data.games | limit:8 %}
-	<a class="game-item" href="{{game.url}}">
+	{% for game in site.data.games | limit: 8 | offset: off %}
+	<a class="game-item" href="{{game.url}}" {% for attr in game %} data-{{attr[0]}}="{{attr[1]}}" {% endfor %}>
 		<img src="{{site.url}}/assets/img/games/{{game.image|default:game.splash|default:game.menu|default:game.gameplay}}"
-			alt="">
+			alt="{{game.title}}">
 		<span class="game-title">{{game.title}}</span>
 	</a>
 	{% endfor %}
 </div>
+{% endfor %}
 <div class="open-bar">
 	<h1>Open....</h1>
 	<a href="javascript:pressRed()" class="red">Go to</a>

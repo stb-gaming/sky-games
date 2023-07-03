@@ -3,6 +3,10 @@
 <head>
 	<link rel="stylesheet" href="https://tumble1999.github.io/sky-epg/sky.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	{% for css in page.css %}
+	<link rel="stylesheet" href="{{site.url}}/assets/css/{{css}}">
+	{% endfor %}
 </head>
 
 <body>
@@ -31,6 +35,10 @@
 		</header>
 		<main> {{content}} </main>
 	</div>
+
+	{% for js in page.js %}
+	<script src="{{site.url}}/assets/js/{{js}}"></script>
+	{% endfor %}
 </body>
 
 </html>

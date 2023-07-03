@@ -65,33 +65,22 @@ function pressBlue() {
 }
 
 function pressSelect() {
-	//pages[page].children[focusY * 3 + focusX].click();
+	gamesMenu.getSelected().click();
 }
 
 
 function pressLeft() {
-	//focusX--;
-	//focus();
 	gamesMenu.left();
 }
 function pressRight() {
-	//focusX++;
-	//focus();
 	gamesMenu.right();
 }
 function pressUp() {
-	//focusY--;
-	//focus();
 	gamesMenu.up();
 }
 function pressDown() {
-	//focusY++;
-	//focus();
 	gamesMenu.down();
 }
-
-//openPage(0);
-//focus();
 
 
 window.addEventListener("click", () => {
@@ -100,8 +89,6 @@ window.addEventListener("click", () => {
 
 Array.from(document.getElementsByClassName("game")).forEach(g => {
 	g.addEventListener("mouseenter", () => {
-		// currentGame = g;
-		// updateGameInfo();
 		gamesMenu.goto(g);
 	});
 
