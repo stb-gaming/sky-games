@@ -2,57 +2,65 @@ let controls = [
 	{
 		title: "up",
 		keys: ["ArrowUp", "i"],
-		function: pressUp
+		function: "pressUp"
 	},
 	{
 		title: "down",
 		keys: ["ArrowDown", "k"],
-		function: pressDown
+		function: "pressDown"
 	},
 	{
 		title: "left",
 		keys: ["ArrowLeft", "j"],
-		function: pressLeft
+		function: "pressLeft"
 	},
 	{
 		title: "right",
 		keys: ["ArrowRight", "l"],
-		function: pressRight
+		function: "pressRight"
 	},
 	{
 		title: "select",
 		keys: [" ", "Enter"],
-		function: pressSelect
+		function: "pressSelect"
 	},
 	{
 		title: "back",
 		keys: ["Backspace"],
-		function: pressBack
+		function: "pressBack"
 	},
 	{
 		title: "red",
 		keys: ["q"],
-		function: pressRed
+		function: "pressRed"
 	},
 	{
 		title: "green",
 		keys: ["w"],
-		function: pressGreen
+		function: "pressGreen"
 	},
 	{
 		title: "yellow",
 		keys: ["e"],
-		function: pressYellow
+		function: "pressYellow"
 	},
 	{
 		title: "blue",
 		keys: ["r"],
-		function: pressBlue
+		function: "pressBlue"
+	},
+	{
+		title: "help",
+		keys: ["t"],
+		function: "presshelp"
 	}
 ];
 
 
+
+
 document.addEventListener("keyup", event => {
 	for (const control of controls)
-		if (control.keys.includes(event.key) && control.function) control.function();
+		if (control.keys.includes(event.key) && control.function && window[control.function])
+			window[control.function]();
 });

@@ -1,8 +1,12 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://tumble1999.github.io/sky-epg/sky.css">
+	<link rel="stylesheet" href="https://tumble1999.github.io/sky-epg/assets/css/sky.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	{% for css in page.css %}
+	<link rel="stylesheet" href="{{site.url}}/assets/css/{{css}}">
+	{% endfor %}
 </head>
 
 <body>
@@ -12,25 +16,31 @@
 				<img src="{{site.url}}/assets/img/sky.png" alt="" id="sky_logo">
 				<label for="sky_logo">guide</label>
 			</div>
-			<div class="header-item">
-				<img src="{{site.url}}/assets/img/guide-tab.svg" alt="" id="guide_logo">
-				<label for="sky_logo">TV GUIDE</label>
-			</div>
-			<div class="header-item">
-				<img src="{{site.url}}/assets/img/box-office-tab.svg" alt="" id="bo_logo">
-				<label for="sky_logo">BOX OFFICE</label>
-			</div>
-			<div class=" header-item">
-				<img src="{{site.url}}/assets/img/services-tab.svg" alt="" id="services_logo">
-				<label for="sky_logo">SERVICES</label>
-			</div>
-			<div class="header-item active">
-				<img src="{{site.url}}/assets/img/interactive-tab.svg" alt="" id="interactive_logo">
-				<label for="sky_logo">INTERACTIVE</label>
-			</div>
+			<nav>
+				<a href="https://tumble1999.github.io/sky-epg/tv-guide" class="header-item">
+					<img src="{{site.url}}/assets/img/guide-tab.svg" alt="" id="guide_logo">
+					<label for="sky_logo">TV GUIDE</label>
+				</a>
+				<a href="https://tumble1999.github.io/sky-epg/box-office" class="header-item">
+					<img src="{{site.url}}/assets/img/box-office-tab.svg" alt="" id="bo_logo">
+					<label for="sky_logo">BOX OFFICE</label>
+				</a>
+				<a href="https://tumble1999.github.io/sky-epg/assets/img/services-tab.svg" class=" header-item">
+					<img src="{{site.url}}/assets/img/services-tab.svg" alt="" id="services_logo">
+					<label for="sky_logo">SERVICES</label>
+				</a>
+				<a href="https://tumble1999.github.io/sky-epg/interactive" class="header-item active">
+					<img src="{{site.url}}/assets/img/interactive-tab.svg" alt="" id="interactive_logo">
+					<label for="sky_logo">INTERACTIVE</label>
+				</a>
+			</nav>
 		</header>
 		<main> {{content}} </main>
 	</div>
+
+	{% for js in page.js %}
+	<script src="{{site.url}}/assets/js/{{js}}"></script>
+	{% endfor %}
 </body>
 
 </html>

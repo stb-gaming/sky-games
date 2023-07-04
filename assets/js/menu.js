@@ -20,9 +20,11 @@ function createMenu({
 	using dx dy change the x and y based on the page contents
 	*/
 	function updateFocus() {
-		x += dx + dp * columns;
+		dx += dp * columns;
+		x += dx;
 		y += dy;
 
+		//console.log({ dp, x });
 		if (x < 0 || x > columns * pages.length - 1) {
 			x -= dx;
 			dx = 0;
@@ -31,6 +33,16 @@ function createMenu({
 
 		dp = Math.floor(x / columns) - p;
 		p += dp;
+		//console.log({ dp, x });
+
+		if (p >= pages.length || p < 0) {
+			p -= dp;
+			x -= dx;
+			dp = 0;
+			dx = 0;
+			//console.log("no more pages");
+		}
+
 
 		let items = getItems(p);
 
@@ -176,6 +188,12 @@ function createMenu({
 		if (pages[p]) return Array.from(pages[p].querySelectorAll(itemSelector));
 	}
 
+	function getPages() {
+		return pages;
+	}
+	function setPages(newPages) {
+		pages = newPages;
+	}
 	function getItem(p, x, y) {
 		let localX = x - p * columns,
 			i = y * columns + localX;
@@ -189,6 +207,6 @@ function createMenu({
 	}
 
 	return {
-		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init
+		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init, getPages, setPages
 	};
 }

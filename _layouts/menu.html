@@ -2,6 +2,7 @@
 
 <head>
 	<title>{{page.title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="{{site.url}}/assets/css/style.css">
 	<link rel="stylesheet" href="{{site.url}}/assets/css/base.css">
 	{% for css in page.css %}
@@ -10,17 +11,17 @@
 </head>
 
 <body class="{{page.tag}}">
+	<script>
+		const SKY_GAMES = JSON.parse(`{{site.data.games | jsonify }}`)
+	</script>
 
 	<div class="container">
 		{{content}}
 	</div>
 	<div id="controls" style="display: none;"><img src="https://denki.co.uk/sky/Controls.png" alt=""></div>
-
-	<script src="{{site.url}}/assets/js/base.js"></script>
 	{% for js in page.js %}
 	<script src="{{site.url}}/assets/js/{{js}}"></script>
 	{% endfor %}
-	<script src="{{site.url}}/assets/js/controls.js"></script>
 </body>
 
 </html>

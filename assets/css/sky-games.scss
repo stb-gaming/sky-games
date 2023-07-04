@@ -12,8 +12,9 @@ h6 {
 
 header {
 	margin-top: 5em;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 30% 70%;
 	img {
 		height: 3em;
 	}
@@ -37,6 +38,7 @@ main {
 		border-style: solid;
 		position: absolute;
 		top: 50%;
+		z-index: 3;
 
 		&.right {
 			border-width: 2em 0 2em 1.5em;
@@ -82,7 +84,7 @@ main {
 			right: -0.5em;
 			bottom: -0.5em;
 			border: 0.5em solid transparent;
-			z-index: 10;
+			z-index: 1;
 		}
 
 		&::after {
@@ -132,12 +134,12 @@ main {
 				background-color: #f42f64;
 				background-image: linear-gradient(0deg, rgba(211, 52, 92, 1) 20%, transparent 35%);
 				border-radius: 0.5rem;
-				z-index: 20;
 
 				position: absolute;
 				top: -0.6em;
 
 				outline: white solid;
+				z-index: 2;
 			}
 			&::before,
 			&::after {
@@ -165,7 +167,6 @@ main {
 			left: 0;
 			right: 0;
 			border: #e9e9e9 solid 0.5em;
-			z-index: 10;
 		}
 		&::after {
 			content: "NEW";
@@ -175,7 +176,6 @@ main {
 			background-color: #e4e4e4;
 			background-image: linear-gradient(0deg, #e2e2e2 20%, transparent 35%);
 			border-radius: 0.5rem;
-			z-index: 20;
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -190,6 +190,41 @@ main {
 		font-size: 1.5em;
 	}
 }
+
+.mini-menu {
+	display: grid;
+	gap: 0.2em;
+
+	a {
+		background: lightgray;
+		padding: 0.1em;
+
+		&:focus,
+		&:focus-visible {
+			color: white;
+			background-color: #f42f64;
+		}
+		&.yes {
+			background-color: yellow;
+		}
+	}
+}
+
+.sort-wrapper {
+	position: relative;
+	#sort-options {
+		position: absolute;
+		bottom: 100%;
+		z-index: 5;
+		background-color: white;
+		padding: 1em;
+	}
+}
+
+#all-games {
+	grid-template-columns: auto auto auto;
+}
+
 footer {
 	margin: 1.5em;
 	height: 3.5em;

@@ -1,33 +1,64 @@
 //let page = 0;
-let pages = Array.from(document.getElementsByClassName("games-list")),
+let
 	musicplayed = false,
 
+	loadingGame,
 
-	gamesMenu = createMenu({
-		pages,
-		rows: 3,
-		columns: 3,
-		itemSelector: "a.game",
-		onFocus: updateGameInfo,
-		animations: true
+	lastMenu = 0,
+	menu = 0,
+
+	mainList = document.getElementById("main-screen"),
+	tabs = document.getElementById("sky-games-tabs"),
+	greenButton = document.querySelector("footer a.green"),
+	allList = document.getElementById("all-games"),
+	sortOptions = document.getElementById("sort-options"),
+
+	menus = [
+		createMenu({
+			pages: Array.from(document.getElementsByClassName("games-list")),
+			rows: 3,
+			columns: 3,
+			itemSelector: "a.game",
+			onFocus: updateGameInfo,
+			animations: true
+		}),
+		createMenu({
+			pages: [sortOptions],
+			rows: sortOptions.children.length
+		}),
+		createMenu({
+			pages: [allList],
+			rows: Math.ceil(allList.children.length / 3),
+			columns: 3
+		})
+	];
+menus.forEach(m => {
+	m.init();
+
+	m.getPages().forEach((p, i) => {
+		m.getItems(i).forEach(item => {
+			item.addEventListener("mouseenter", () => {
+				m.goto(item);
+			});
+		});
 	});
-gamesMenu.init();
+});
 
 function nextPage() {
 	if (!musicplayed) toggleMusic();
-	gamesMenu.nextPage();
+	menus[menu].nextPage();
 
 }
 function lastPage() {
 	if (!musicplayed) toggleMusic();
-	gamesMenu.lastPage();
+	menus[menu].lastPage();
 }
 
 
 function updateGameInfo() {
 	let gameInfo = document.getElementById("game-info"),
 		image = new Image(),
-		currentGame = gamesMenu.getSelected();
+		currentGame = menus[menu].getSelected();
 	gameInfo.getElementsByTagName("h1")[0].innerText = image.alt = currentGame.dataset.title;
 	image.src = image_prefix + (currentGame.dataset.gameplay || currentGame.dataset.image || currentGame.dataset.splash);
 	if (currentGame.dataset.new)
@@ -44,6 +75,27 @@ function pressRed() {
 	controls.style.display = controls.style.display ? null : "none";
 }
 
+
+
+
+function pressGreen() {
+	let menuTmp = menu;
+	if (menu == 1) {
+		menu = lastMenu;
+		sortOptions.style.display = "none";
+		greenButton.innerText = "Sort Games";
+	} else {
+		menu = 1;
+		sortOptions.style.display = null;
+		greenButton.innerText = "Back";
+	}
+
+	lastMenu = menuTmp;
+}
+
+allList.style.display = "none";
+sortOptions.style.display = "none";
+
 function toggleMusic() {
 	if (song.paused) {
 		musicplayed = true;
@@ -54,9 +106,76 @@ function toggleMusic() {
 
 }
 
+let xor = (foo, bar) => (foo && !bar) || (!foo && bar);
+
+function sortBy(attr) {
+	//close green menu
+	pressBack();
+
+	if (!attr) {
+		//go back to main screen
+		if (menu != 0) pressBack();
+		return;
+	}
+
+	menu = 2;
+	allList.textContent = "";
+	let games = SKY_GAMES.toSorted((a, b) => {
+		let sorted = [a[attr], b[attr]].sort();
+		if (xor(sorted[0] == b[attr], typeof a[attr] == "boolean" || typeof b[attr] == "boolean")) {
+			return 1;
+		} else {
+			return -1;
+		}
+	});
+	games.forEach(game => {
+		let link = document.createElement("a");
+		link.classList.add("game");
+		link.href = game.url;
+		link.innerText = game.title;
+		if (attr != "title" && game[attr]) {
+
+			let attrEl = document.createElement("strong");
+			attrEl.innerText = typeof game[attr] == "boolean" ? attr : game[attr];
+			link.innerText = ` - ${game.title}`;
+			link.prepend(attrEl);
+		}
+		if (typeof game[attr] == "boolean") link.classList.add("yes");
+		link.addEventListener("mouseenter", () => {
+			menus[2].goto(link);
+		});
+		allList.appendChild(link);
+	});
+	allList.style.display = null;
+	tabs.style.display = "none";
+	mainList.style.display = "none";
+}
+
 
 function pressYellow() {
 	toggleMusic();
+}
+
+function pressBack() {
+
+	if (loadingGame) {
+		clearTimeout(loadingGame.timeout);
+		loadingGame.splash.remove();
+		loadingGame = null;
+		return;
+	}
+
+	if (menu == 1) {
+		pressGreen();
+		return;
+	}
+	if (menu != 0) {
+		allList.style.display = "none";
+		mainList.style.display = null;
+		tabs.style.display = null;
+		greenButton.innerText = "Sort";
+		menu = 0;
+	}
 }
 
 
@@ -64,34 +183,23 @@ function pressBlue() {
 	window.location = "/sky-games";
 }
 
-function pressSelect() {
-	//pages[page].children[focusY * 3 + focusX].click();
-}
+/*function pressSelect() {
+	menus[menu].getSelected().click();
+}*/
 
 
 function pressLeft() {
-	//focusX--;
-	//focus();
-	gamesMenu.left();
+	menus[menu].left();
 }
 function pressRight() {
-	//focusX++;
-	//focus();
-	gamesMenu.right();
+	menus[menu].right();
 }
 function pressUp() {
-	//focusY--;
-	//focus();
-	gamesMenu.up();
+	menus[menu].up();
 }
 function pressDown() {
-	//focusY++;
-	//focus();
-	gamesMenu.down();
+	menus[menu].down();
 }
-
-//openPage(0);
-//focus();
 
 
 window.addEventListener("click", () => {
@@ -99,21 +207,20 @@ window.addEventListener("click", () => {
 });
 
 Array.from(document.getElementsByClassName("game")).forEach(g => {
-	g.addEventListener("mouseenter", () => {
-		// currentGame = g;
-		// updateGameInfo();
-		gamesMenu.goto(g);
-	});
+
 
 	g.addEventListener("click", e => {
 		e.preventDefault();
 
-		splash(image_prefix + (g.dataset.splash || g.dataset.image));
-		setTimeout(() => {
-			window.location.href = g.dataset.url;
-		}, 5000);
+		loadingGame = {
+			splash: splash(image_prefix + (g.dataset.splash || g.dataset.image)),
+			timeout: setTimeout(() => {
+				window.location.href = g.dataset.url;
+			}, 5000)
+		};
 	});
 });
+
 
 
 document.addEventListener("keyup", event => {

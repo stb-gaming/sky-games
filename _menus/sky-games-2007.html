@@ -6,6 +6,7 @@ css:
 js:
 - menu.js
 - sky-games.js
+- sky-remote.js
 ---
 <script>
 	function splash(img) {
@@ -23,18 +24,18 @@ js:
 	let con = splash("{{site.url}}/assets/img/2007/splash.webp");
 	window.addEventListener("load", () => {
 		con.remove();
-	})
+	});
 </script>
 
 <header>
 	<img src="{{site.url}}/assets/img/games/SKY Games/SkyGamesLogo-3D Ball-RGB.jpg" alt="">
-	<div class="tabs">
+	<div id="sky-games-tabs">
 		<a href="#">Tab 1 </a>
 		<a href="#">Tab 2</a>
 		<a href="#">Tab 3</a>
 	</div>
 </header>
-<main>
+<main id="main-screen">
 	<div>
 		{% assign pages = site.data.games.size | divided_by: 9 | ceil %}
 		{% for mult in (0..pages) %}
@@ -59,10 +60,29 @@ js:
 
 
 </main>
+
+<main id="all-games" class="mini-menu">
+	{% assign allGames= site.data.games | sort: 'title' %}
+	{% for game in allGames %}
+	<a href="{{game.url}}" class="game">{{game.title}}</a>
+	{% endfor %}
+</main>
 <footer>
 	<a href="javascript:pressRed()" class="red">Controls</a>
-	<a href="javascript:pressGreen()" class="green">No Games</a>
-	<a href="javascript:pressYellow()" class="yellow">Music</a>
+	<span class="sort-wrapper">
+		<div id="sort-options" class="mini-menu">
+			<a href="javascript:sortBy()">Back to main</a>
+			{% for key in site.data.games[0] %}
+			{% assign noincludes = "description url splash menu gameplay image" %}
+			{% unless noincludes contains key[0] %}
+			<a href="javascript:sortBy('{{key[0]}}')"">{{key[0]}}</a>
+			{% endunless %}
+			{% endfor %}
+		</div>
+		<a href=" javascript:pressGreen()" class="green">Sort Games</a>
+	</span>
+
+	<a href=" javascript:pressYellow()" class="yellow">Music</a>
 	<a href="javascript:pressBlue()" class="blue">Change Menu</a>
 </footer>
 <script>

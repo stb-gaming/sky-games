@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="24pt"
+    height="16.32pt"
+    viewBox="0 0 24 16.32">
+<defs>
+  <radialGradient id="gradient0" gradientUnits="objectBoundingBox" cx="0.497764017887857" cy="0.484102564102564" fx="0.497764017887857" fy="0.484102564102564" r="1.4142135623731" spreadMethod="pad">
+   <stop stop-color="#808080" offset="0" stop-opacity="1"/>
+   <stop stop-color="#000000" offset="1" stop-opacity="1"/>
+  </radialGradient>
+ </defs>
+<ellipse id="shape0" transform="translate(2.63999999999999, 3.96)" rx="96.24" ry="65.82" cx="96.24" cy="65.82" fill="#000000" fill-rule="evenodd" stroke="none" stroke-width="7.68" stroke-linecap="square" stroke-linejoin="bevel"/><ellipse id="shape1" transform="translate(9.17999999999999, 11.16)" rx="87.21" ry="58.5" cx="87.21" cy="58.5" fill="url(#gradient0)" fill-rule="evenodd" stroke="none" stroke-width="7.68" stroke-linecap="square" stroke-linejoin="bevel"/><path id="shape0" transform="matrix(0.9999999729554 0 0 0.9999999729554 32.504590304602 23.6842035533516)" sodipodi:type="arc" sodipodi:rx="71.6463690621087" sodipodi:ry="48.0599998868634" sodipodi:cx="63.8854088163244" sodipodi:cy="45.9757962771453" sodipodi:start="3.61135288181719" sodipodi:end="4.41680879999714" sodipodi:open="true" d="M43.0152 0C24.3606 3.81034 8.82724 12.5566 -7.10543e-15 24.2204" fill="none" stroke="#ffffff" stroke-width="7.68" stroke-linecap="round" stroke-linejoin="bevel"/>
+</svg>
