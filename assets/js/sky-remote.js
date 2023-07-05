@@ -1,5 +1,35 @@
 let controls = [
 	{
+		title: "sky",
+		keys: ["Esc"],
+		function: "pressSky"
+	},
+	{
+		title: "tv-guide",
+		keys: ["a"],
+		function: "pressTvGuide"
+	},
+	{
+		title: "box-office",
+		keys: ["s"],
+		function: "pressBoxOffice"
+	},
+	{
+		title: "services",
+		keys: ["d"],
+		function: "pressServices"
+	},
+	{
+		title: "interactive",
+		keys: ["f"],
+		function: "pressInteractive"
+	},
+	{
+		title: "i",
+		keys: ["g"],
+		function: "pressI"
+	},
+	{
 		title: "up",
 		keys: ["ArrowUp", "i"],
 		function: "pressUp"
