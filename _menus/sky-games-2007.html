@@ -29,14 +29,14 @@ js:
 
 <header>
 	<img src="{{site.url}}/assets/img/games/SKY Games/SkyGamesLogo-3D Ball-RGB.jpg" alt="">
-	<div id="sky-games-tabs">
+	<!-- <div id="sky-games-tabs">
 		<a href="#">Tab 1 </a>
 		<a href="#">Tab 2</a>
 		<a href="#">Tab 3</a>
-	</div>
+	</div> -->
 </header>
 <main id="main-screen">
-	<div>
+	<div class="games-lists">
 		{% assign pages = site.data.games.size | divided_by: 9 | ceil %}
 		{% for mult in (0..pages) %}
 		{% assign off = mult | times: 9 %}
@@ -51,7 +51,7 @@ js:
 		{% endfor %}
 	</div>
 	<div>
-		<div id="game-info">
+		<div id="game-info" class="hide-mobile">
 			<h1>Choose a game</h1>
 			<div class="screenshot"><img src="#" alt="Game Name"></div>
 			<p>Hover over a game to see details</p>
@@ -68,7 +68,7 @@ js:
 	{% endfor %}
 </main>
 <footer>
-	<a href="javascript:pressRed()" class="red">Controls</a>
+	<a href="javascript:pressRed()" class="red hide-mobile">Controls</a>
 	<span class="sort-wrapper">
 		<div id="sort-options" class="mini-menu">
 			<a href="javascript:sortBy()">Back to main</a>

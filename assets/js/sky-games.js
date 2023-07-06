@@ -82,12 +82,12 @@ function pressGreen() {
 	let menuTmp = menu;
 	if (menu == 1) {
 		menu = lastMenu;
-		sortOptions.style.display = "none";
-		greenButton.innerText = "Sort Games";
+		if (void 0 != sortOptions) sortOptions.style.display = "none";
+		if (void 0 != greenButton) greenButton.innerText = "Sort Games";
 	} else {
 		menu = 1;
-		sortOptions.style.display = null;
-		greenButton.innerText = "Back";
+		if (void 0 != sortOptions) sortOptions.style.display = null;
+		if (void 0 != greenButton) greenButton.innerText = "Back";
 	}
 
 	lastMenu = menuTmp;
@@ -119,7 +119,7 @@ function sortBy(attr) {
 	}
 
 	menu = 2;
-	allList.textContent = "";
+	if (void 0 != allList) allList.textContent = "";
 	let games = SKY_GAMES.toSorted((a, b) => {
 		let sorted = [a[attr], b[attr]].sort();
 		if (xor(sorted[0] == b[attr], typeof a[attr] == "boolean" || typeof b[attr] == "boolean")) {
@@ -144,11 +144,11 @@ function sortBy(attr) {
 		link.addEventListener("mouseenter", () => {
 			menus[2].goto(link);
 		});
-		allList.appendChild(link);
+		if (void 0 != allList) allList.appendChild(link);
 	});
-	allList.style.display = null;
-	tabs.style.display = "none";
-	mainList.style.display = "none";
+	if (void 0 != allList) allList.style.display = null;
+	if (void 0 != tabs) tabs.style.display = "none";
+	if (void 0 != mainList) mainList.style.display = "none";
 }
 
 
@@ -170,10 +170,10 @@ function pressBack() {
 		return;
 	}
 	if (menu != 0) {
-		allList.style.display = "none";
-		mainList.style.display = null;
-		tabs.style.display = null;
-		greenButton.innerText = "Sort";
+		if (void 0 != allList) allList.style.display = "none";
+		if (void 0 != mainList) mainList.style.display = null;
+		if (void 0 != tabs) tabs.style.display = null;
+		if (void 0 != greenButton) greenButton.innerText = "Sort";
 		menu = 0;
 	}
 }
