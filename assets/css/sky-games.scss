@@ -3,6 +3,10 @@
 
 $mobile: 720px;
 
+html {
+	font-family: sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -13,10 +17,7 @@ h6 {
 }
 
 header {
-	margin: 1em;
-	@media (min-width: $mobile) {
-		margin-top: 5em;
-	}
+	padding: 1em;
 	display: grid;
 	grid-template-rows: auto;
 	grid-template-columns: 30% 70%;
@@ -36,7 +37,6 @@ header {
 #main-screen {
 	background-color: #e5f1e7;
 	border-radius: 1em;
-	// grid-template-rows: 67% 33%;
 
 	@media (min-width: $mobile) {
 		display: grid;
@@ -94,46 +94,31 @@ header {
 	}
 }
 .games-lists {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .games-list {
-	display: flex;
-	flex-wrap: wrap;
 	position: relative;
-	gap: 7%;
-
 	display: grid;
-	max-width: 457.2px;
-	max-height: 379.2px;
-	grid-template-columns: 28% 28% 28%;
-	grid-template-rows: 27% 27% 27%;
-
+	grid-template-columns: 33% 33% 33%;
 	img {
-		@media (min-width: $mobile) {
-			width: 130px;
-			height: 104px;
-		}
-		width: 100%;
-		height: 100%;
-		border-radius: 1em;
+		max-width: 100%;
+		border-radius: 24%;
 	}
 
 	.game {
+		position: relative;
 		display: flex;
 		justify-content: space-around;
-		position: relative;
-
+		margin: 5%;
 		&::before {
 			content: "";
-			border-radius: 2em;
+			border-radius: 24%;
 			position: absolute;
-			top: -0.5em;
-			left: -0.5em;
-			right: -0.5em;
-			bottom: -0.5em;
+			$out: 2%;
+			top: -$out;
+			left: -$out;
+			right: -$out;
+			bottom: -$out;
 			border: 0.5em solid transparent;
 			z-index: 1;
 		}
@@ -168,7 +153,7 @@ header {
 		}
 
 		&:focus,
-		//&:hover,
+		&:hover,
 		&:focus-visible {
 			outline: none;
 
