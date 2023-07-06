@@ -183,9 +183,9 @@ function pressBlue() {
 	window.location = "/sky-games";
 }
 
-/*function pressSelect() {
+function pressSelect() {
 	menus[menu].getSelected().click();
-}*/
+}
 
 
 function pressLeft() {
