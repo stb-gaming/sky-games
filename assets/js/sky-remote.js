@@ -82,7 +82,7 @@ let controls = [
 	{
 		title: "help",
 		keys: ["t"],
-		function: "presshelp"
+		function: "pressHelp"
 	}
 ];
 
