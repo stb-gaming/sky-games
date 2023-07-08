@@ -63,6 +63,19 @@
   image:
   menu: SKY Games/Beehive Bedlam/menu.png
 
+- title: Beehive Bedlam
+  description:
+  developer: Denki
+  url: https://denki.co.uk/sky/beehive/app.html
+  brand:
+  splash:
+  gameplay:
+  new: 1
+  date:
+  archived: 2023-07-08
+  image:
+  menu:
+
 - title: Caterpillar Crunch
   description:
   developer: Denki
