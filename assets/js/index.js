@@ -1,5 +1,5 @@
 let menu = createMenu({
-	pages: Array.from(document.getElementsByClassName("item-list"))
+	pages: Array.from(document.getElementsByClassName("menu"))
 });
 
 
