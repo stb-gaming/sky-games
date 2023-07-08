@@ -61,7 +61,7 @@ function updateGameInfo() {
 		currentGame = menus[menu].getSelected();
 	gameInfo.getElementsByTagName("h1")[0].innerText = image.alt = currentGame.dataset.title;
 	image.src = image_prefix + (currentGame.dataset.gameplay || currentGame.dataset.image || currentGame.dataset.splash);
-	if (currentGame.dataset.new)
+	if (Math.floor((Date.now() - new Date(currentGame.dataset.archives)) / (1000 * 60 * 60 * 24)))
 		gameInfo.classList.add("new");
 	else
 		gameInfo.classList.remove("new");
