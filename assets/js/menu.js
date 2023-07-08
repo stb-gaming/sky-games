@@ -206,7 +206,14 @@ function createMenu({
 		return getItem(p, x, y);
 	}
 
+	function getPos() {
+		let localX = x - p * columns;
+		return {
+			p, x, y, localX
+		};
+	}
+
 	return {
-		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init, getPages, setPages
+		nextPage, lastPage, left, right, up, down, getSelected, getItems, getItem, goto, init, getPages, setPages, getPos
 	};
 }
