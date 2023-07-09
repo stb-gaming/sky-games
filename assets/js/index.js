@@ -16,6 +16,10 @@ function pressDown() {
 	menu.down();
 }
 
+SkyRemote.createSkyRemote({
+	pressSelect, pressUp, pressDown
+});
+
 menu.getItems(0).forEach(g => {
 	g.addEventListener("mouseenter", () => {
 		menu.goto(g);

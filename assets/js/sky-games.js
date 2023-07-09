@@ -201,6 +201,10 @@ function pressDown() {
 	menus[menu].down();
 }
 
+SkyRemote.createSkyRemote({
+	pressRed, pressGreen, pressYellow, pressBack, pressBlue, pressSelect, pressLeft, pressRight, pressUp, pressDown
+});
+
 
 window.addEventListener("click", () => {
 	if (!musicplayed) toggleMusic();

@@ -1,3 +1,5 @@
+//TODO: DELETE
+
 let controls = [
 	{
 		title: "sky",

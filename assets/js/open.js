@@ -39,6 +39,9 @@ function pressBlue() {
 	window.location = "/sky-games";
 }
 
+SkyRemote.createSkyRemote({
+	pressRed, pressBlue, pressSelect, pressLeft, pressRight, pressUp, pressDown
+});
 
 Array.from(document.getElementsByClassName("game-item")).forEach(g => {
 	g.addEventListener("mouseenter", () => {
