@@ -14,7 +14,7 @@ let
 	sortOptions = document.getElementById("sort-options"),
 
 	menus = [
-		createMenuGrid({
+		createMenu({
 			pages: Array.from(document.getElementsByClassName("games-list")),
 			rows: 3,
 			columns: 3,

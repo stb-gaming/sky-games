@@ -1,6 +1,6 @@
 
 
-let gamesMenu = createMenuGrid({
+let gamesMenu = createMenu({
 	pages: Array.from(document.getElementsByClassName("games-list")),
 	rows: 2,
 	columns: 4,
