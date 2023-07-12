@@ -1,3 +1,9 @@
+# Sky Games Web UI
+
+## Screenshots
+![](screenshots/1999-open.png)
+![](screenshots/2007-games.png)
+![](screenshots/2007-games-sort.png)
 ## Setting Up
 First install Ruby Version Manager or Ruble 2.7.5 and then setup Ruby
 ```
@@ -20,7 +26,7 @@ serve the contents of the `_site` folder
 
 
 ## TODO
-- [ ] Open Games 1999
+- [x] Open Games 1999
 - [ ] Open Games 2000
 - [ ] Open Games 2000 festive
 - [ ] Open Games 2000 festive alt
@@ -30,5 +36,5 @@ serve the contents of the `_site` folder
 - [ ] Sky Gamestar 2003
 - [ ] Sky Gamestar 2005
 - [ ] Sky Gamestar 2006
-- [ ] Sky Games 2007
+- [x] Sky Games 2007
 - [ ] Sky Games 2009
