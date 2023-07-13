@@ -130,25 +130,25 @@ header {
 		&.left {
 			&::before,
 			&::after {
-				transform: translateX(10em);
+				transform: translateX(100%);
 			}
 		}
 		&.right {
 			&::before,
 			&::after {
-				transform: translateX(-10em);
+				transform: translateX(-100%);
 			}
 		}
 		&.up {
 			&::before,
 			&::after {
-				transform: translateY(10em);
+				transform: translateY(100%);
 			}
 		}
 		&.down {
 			&::before,
 			&::after {
-				transform: translateY(-10em);
+				transform: translateY(-100%);
 			}
 		}
 
