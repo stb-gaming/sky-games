@@ -93,7 +93,7 @@ function pressGreen() {
 	lastMenu = menuTmp;
 }
 
-allList.style.display = "none";
+if (allList) allList.style.display = "none";
 sortOptions.style.display = "none";
 
 function toggleMusic() {
@@ -188,22 +188,7 @@ function pressSelect() {
 }
 
 
-function pressLeft() {
-	menus[menu].left();
-}
-function pressRight() {
-	menus[menu].right();
-}
-function pressUp() {
-	menus[menu].up();
-}
-function pressDown() {
-	menus[menu].down();
-}
 
-SkyRemote.createSkyRemote({
-	pressRed, pressGreen, pressYellow, pressBack, pressBlue, pressSelect, pressLeft, pressRight, pressUp, pressDown
-});
 
 
 window.addEventListener("click", () => {
