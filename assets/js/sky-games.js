@@ -70,29 +70,6 @@ function updateGameInfo() {
 }
 
 
-function pressRed() {
-	let controls = document.getElementById("controls");
-	controls.style.display = controls.style.display ? null : "none";
-}
-
-
-
-
-function pressGreen() {
-	let menuTmp = menu;
-	if (menu == 1) {
-		menu = lastMenu;
-		if (void 0 != sortOptions) sortOptions.style.display = "none";
-		if (void 0 != greenButton) greenButton.innerText = "Sort Games";
-	} else {
-		menu = 1;
-		if (void 0 != sortOptions) sortOptions.style.display = null;
-		if (void 0 != greenButton) greenButton.innerText = "Back";
-	}
-
-	lastMenu = menuTmp;
-}
-
 if (allList) allList.style.display = "none";
 sortOptions.style.display = "none";
 
@@ -179,10 +156,22 @@ function pressBack() {
 }
 
 
-function pressBlue() {
-	window.location = "/sky-games";
-}
 
+
+function pressGreen() {
+	let menuTmp = menu;
+	if (menu == 1) {
+		menu = lastMenu;
+		if (void 0 != sortOptions) sortOptions.style.display = "none";
+		if (void 0 != greenButton) greenButton.innerText = "Sort Games";
+	} else {
+		menu = 1;
+		if (void 0 != sortOptions) sortOptions.style.display = null;
+		if (void 0 != greenButton) greenButton.innerText = "Back";
+	}
+
+	lastMenu = menuTmp;
+}
 function pressSelect() {
 	menus[menu].getSelected().click();
 }

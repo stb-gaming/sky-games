@@ -11,6 +11,22 @@ function pressDown() {
 	menus[menu].down();
 }
 
+
+function pressRed() {
+	let controls = document.getElementById("controls");
+	controls.style.display = controls.style.display ? null : "none";
+}
+
+
+
+function pressBlue() {
+	window.location = "/sky-games";
+}
+
+
+
+
+
 SkyRemote.createSkyRemote({
 	pressRed, pressGreen, pressYellow, pressBack, pressBlue, pressSelect, pressLeft, pressRight, pressUp, pressDown
 });
