@@ -106,6 +106,30 @@
   image:
   menu:
 
+- title: "Courage the Cowardly Dog: Katz Komeback"
+  description:
+  developer: Denki
+  url: https://denki.co.uk/sky/courage2/app.html
+  brand: Cartoon Network
+  splash:
+  gameplay:
+  date:
+  archived: 2023-07-14
+  image:
+  menu:
+
+- title: "Courage the Cowardly Dog: Le Quack Attack"
+  description:
+  developer: Denki
+  url: https://denki.co.uk/sky/courage3/app.html
+  brand: Cartoon Network
+  splash:
+  gameplay:
+  date:
+  archived: 2023-07-14
+  image:
+  menu:
+
 - title: Darts
   description:
   developer: Denki
