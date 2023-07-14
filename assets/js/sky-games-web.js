@@ -25,6 +25,21 @@ function pressBlue() {
 
 
 
+Array.from(document.getElementsByClassName("game")).forEach(g => {
+
+
+	g.addEventListener("click", e => {
+		e.preventDefault();
+
+		loadingGame = {
+			splash: splash(image_prefix + (g.dataset.splash || g.dataset.image)),
+			timeout: setTimeout(() => {
+				window.location.href = g.dataset.url;
+			}, 5000)
+		};
+	});
+});
+
 
 
 SkyRemote.createSkyRemote({
