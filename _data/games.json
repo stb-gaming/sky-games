@@ -43,6 +43,20 @@
 		"category": "Arcade"
 	},
 	{
+		"title": "Bups! 2.0",
+		"description": "Guide the Bips around, reclaim their stolen Treasure... and avoid the traps and dangers in every Cave. ",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/bips2/app.html",
+		"brand": null,
+		"splash": null,
+		"gameplay": null,
+		"date": "2004-??-??",
+		"archived": "2023-09-23",
+		"image": null,
+		"menu": "Denki/Bips! 2.0/menu.png",
+		"category": null
+	},
+	{
 		"title": "Pac-Man",
 		"description": "Gobble pills, avoid ghosts",
 		"developer": "Denki",
@@ -187,6 +201,20 @@
 		"category": "Puzzle"
 	},
 	{
+		"title": "Incredible Hulk",
+		"description": "Hulk returns in a comic-book style action game!",
+		"developer": "Denki",
+		"url": "http://denki.co.uk/sky/hulk2/app.html",
+		"brand": "Marvel",
+		"splash": "Marvel/The Incredible Hulk/Menu.png",
+		"gameplay": "Marvel/The Incredible Hulk/Desert1.png",
+		"date": "2003-??-??",
+		"archived": "2023-09-09",
+		"image": null,
+		"menu": null,
+		"category": "Action"
+	},
+	{
 		"title": "Looney Tunes: Back in Action",
 		"description": "Bugs and Daffy need your help!",
 		"developer": "Denki",
@@ -199,6 +227,34 @@
 		"image": null,
 		"menu": null,
 		"list": "classics",
+		"category": "Adventure"
+	},
+	{
+		"title": "Looney Tunes: Back in Action 2",
+		"description": "ACME strikes back!",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/lt2/app.html",
+		"brand": "Warner Bros",
+		"splash": "Warner Bros/Looney Tunes Episode 2/Front End.jpg",
+		"gameplay": "Warner Bros/Looney Tunes Episode 2/Screen2.jpg",
+		"date": "2004-07-15",
+		"archived": "2023-09-16",
+		"image": null,
+		"menu": null,
+		"category": "Adventure"
+	},
+	{
+		"title": "Looney Tunes: Back in Action 3",
+		"description": "Oh no! Bugs has been kidnapped by ACME!",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/lt3/app.html",
+		"brand": "Warner Bros",
+		"splash": "Warner Bros/Looney Tunes Episode 3/splash.jpg",
+		"gameplay": "Warner Bros/Looney Tunes Episode 3/screen_shot_04.jpg",
+		"date": "2005-05-06",
+		"archived": "2023-09-16",
+		"image": null,
+		"menu": null,
 		"category": "Adventure"
 	},
 	{
@@ -285,6 +341,34 @@
 		"image": null,
 		"menu": null,
 		"list": "classics",
+		"category": "Adventure"
+	},
+	{
+		"title": "Scooby-Doo: Mummy Madness",
+		"description": "Help Mystery Inc tackle a haunted museum!",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/sd2/app.html",
+		"brand": "Cartoon Network",
+		"splash": "Cartoon Network/Scooby-Doo Where Are You/Scooby-Doo Where Are You Episode 2/Splash.jpg",
+		"gameplay": "Cartoon Network/Scooby-Doo Where Are You/Scooby-Doo Where Are You Episode 2/PlayObservatory.jpg",
+		"date": "2005-09-08",
+		"archived": "2023-09-16",
+		"image": null,
+		"menu": null,
+		"category": "Adventure"
+	},
+	{
+		"title": "Scooby-Doo: Mystery Mine",
+		"description": "Scooby's gang is tasked with navigating the Mysterious Manor!",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/sd3/app.html",
+		"brand": "Cartoon Network",
+		"splash": "Cartoon Network/Scooby-Doo Where Are You/Scooby-Doo Where Are You Episode 3/Splash.jpg",
+		"gameplay": "Cartoon Network/Scooby-Doo Where Are You/Scooby-Doo Where Are You Episode 3/Play03.jpg",
+		"date": "2005-12-15",
+		"archived": "2023-09-16",
+		"image": null,
+		"menu": null,
 		"category": "Adventure"
 	},
 	{
@@ -591,6 +675,20 @@
 		"category": "Adventure"
 	},
 	{
+		"title": "Millionaire",
+		"description": "Everyone's favourite game show!",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/millionaire/app.html",
+		"brand": "Celador",
+		"splash": "Celador/Who Wants To Be A Millionaire/Who Wants To Be A Millionaire/Splash.jpg",
+		"gameplay": "Celador/Who Wants To Be A Millionaire/Who Wants To Be A Millionaire/Screen02.jpg",
+		"date": "2006-03-??",
+		"archived": "2023-09-09",
+		"image": null,
+		"menu": null,
+		"category": "Quiz"
+	},
+	{
 		"title": "Codename Kids Next Door 2.0",
 		"description": "Kids versus grown-ups, the ultimate battle of wits!",
 		"developer": "Denki",
@@ -603,6 +701,20 @@
 		"image": null,
 		"menu": null,
 		"category": "Platformer"
+	},
+	{
+		"title": "Millionaire Gold",
+		"description": "Now with extra gold!!",
+		"developer": "Denki",
+		"url": "https://denki.co.uk/sky/millionairegold/app.html",
+		"brand": "Celador",
+		"splash": "Celador/Who Wants To Be A Millionaire/Who Wants To Be A Millionaire Gold Edition/GoldSplash.jpg",
+		"gameplay": "Celador/Who Wants To Be A Millionaire/Who Wants To Be A Millionaire Gold Edition/GoldScreen01.jpg",
+		"date": "2006-04-??",
+		"archived": "2023-09-09",
+		"image": null,
+		"menu": null,
+		"category": "Quiz"
 	},
 	{
 		"title": "Scooby-Doo: Creepy Cowboy",
